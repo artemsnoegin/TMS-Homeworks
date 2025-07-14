@@ -86,24 +86,15 @@ isNight(isNight: false)
 //    и возвращающую true, если оно простое, и false, если сложное
 
 func isSimple(number: Int) -> Bool {
-    if number > 1 {
+    if number < 2 {
         return false
     }
-    if number != 2 && number % 2 == 0 {
-        return false
+    for i in 2..<number {
+        if number % i == 0 {
+            return false
+        }
     }
-    if number != 3 && number % 3 == 0 {
-        return false
-    }
-    if number != 5 && number % 5 == 0 {
-        return false
-    }
-    if number != 7 && number % 7 == 0 {
-        return false
-    }
-    else {
-        return true
-    }
+    return true
 }
 
 
