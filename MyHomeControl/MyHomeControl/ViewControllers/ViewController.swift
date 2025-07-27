@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let backgroundImage = UIImageView(image: .greenMeshGradient)
+    
     let titleLabel = UILabel()
     let usernameLabel = UILabel()
     let passwordLabel = UILabel()
@@ -22,34 +24,37 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0.5, green: 0.6, blue: 0.5, alpha: 1)
-        
         titleLabel.text = "My Home Control"
-        titleLabel.font = .preferredFont(forTextStyle: .largeTitle)
-        titleLabel.textColor = .white
+        titleLabel.font = .preferredFont(forTextStyle: .extraLargeTitle)
+        titleLabel.textColor = .black
         
         usernameLabel.text = "Username"
         usernameLabel.font = .preferredFont(forTextStyle: .title3)
-        usernameLabel.textColor = .white
-        
+        usernameLabel.textColor = .black
         usernameField.backgroundColor = .white
         usernameField.borderStyle = .roundedRect
         usernameField.placeholder = "Please enter username"
         
         passwordLabel.text = "Password"
         passwordLabel.font = .preferredFont(forTextStyle: .title3)
-        passwordLabel.textColor = .white
+        passwordLabel.textColor = .black
         
         passwordField.backgroundColor = .white
         passwordField.borderStyle = .roundedRect
         passwordField.placeholder = "Please enter password"
         passwordField.isSecureTextEntry = true
         
-        [titleLabel, usernameLabel, passwordLabel, usernameField, passwordField, logInButton, registerButton].forEach {
+        [backgroundImage, titleLabel, usernameLabel, passwordLabel, usernameField, passwordField, logInButton, registerButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
         
         NSLayoutConstraint.activate([
+            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 65),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             

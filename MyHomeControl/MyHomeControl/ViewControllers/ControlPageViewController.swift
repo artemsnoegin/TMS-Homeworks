@@ -9,6 +9,8 @@ import UIKit
 
 class ControlPageViewController: UIViewController {
     
+    let backgroundImage = UIImageView(image: .pinkMeshGradient)
+    
     let welcomeLabel = UILabel()
     let titleLabel = UILabel()
     let lightsLabel = UILabel()
@@ -30,16 +32,16 @@ class ControlPageViewController: UIViewController {
         view.backgroundColor = UIColor(red: 0.8, green: 0.4, blue: 0.3, alpha: 1)
         
         welcomeLabel.text = "Welcome, new user!"
-        welcomeLabel.font = .preferredFont(forTextStyle: .largeTitle)
-        welcomeLabel.textColor = .white
+        welcomeLabel.font = .preferredFont(forTextStyle: .extraLargeTitle)
+        welcomeLabel.textColor = .black
         
         titleLabel.text = "Apartment control page🏡"
-        titleLabel.font = .preferredFont(forTextStyle: .title1)
-        titleLabel.textColor = .white
+        titleLabel.font = .preferredFont(forTextStyle: .extraLargeTitle2)
+        titleLabel.textColor = .black
         
         lightsLabel.text = "Lights"
         lightsLabel.font = .preferredFont(forTextStyle: .body)
-        lightsLabel.textColor = .white
+        lightsLabel.textColor = .black
         
         lightsSegmentedControl.insertSegment(withTitle: "On", at: 0, animated: true)
         lightsSegmentedControl.insertSegment(withTitle: "Off", at: 1, animated: true)
@@ -47,7 +49,7 @@ class ControlPageViewController: UIViewController {
         
         doorLabel.text = "Door"
         doorLabel.font = .preferredFont(forTextStyle: .body)
-        doorLabel.textColor = .white
+        doorLabel.textColor = .black
         
         doorSegmentedControl.insertSegment(withTitle: "Lock", at: 0, animated: true)
         doorSegmentedControl.insertSegment(withTitle: "Unlock", at: 1, animated: true)
@@ -55,7 +57,7 @@ class ControlPageViewController: UIViewController {
         
         acLabel.text = "A/C"
         acLabel.font = .preferredFont(forTextStyle: .body)
-        acLabel.textColor = .white
+        acLabel.textColor = .black
         
         acSegmentedControl.insertSegment(withTitle: "Auto", at: 0, animated: true)
         acSegmentedControl.insertSegment(withTitle: "On", at: 1, animated: true)
@@ -64,7 +66,7 @@ class ControlPageViewController: UIViewController {
         
         temperatureLabel.text = "Temperature"
         temperatureLabel.font = .preferredFont(forTextStyle: .body)
-        temperatureLabel.textColor = .white
+        temperatureLabel.textColor = .black
         
         temperatureSlider.minimumValue = 15
         temperatureSlider.maximumValue = 35
@@ -72,7 +74,7 @@ class ControlPageViewController: UIViewController {
         
         temperatureValueLabel.text = "\(Int(temperatureSlider.value))℃"
         temperatureValueLabel.font = .preferredFont(forTextStyle: .body)
-        temperatureValueLabel.textColor = .white
+        temperatureValueLabel.textColor = .black
         
         alarmButton.setTitle("Alarm", for: .normal)
         alarmButton.setTitleColor(.red, for: .normal)
@@ -81,12 +83,17 @@ class ControlPageViewController: UIViewController {
         
 
         
-        [welcomeLabel, titleLabel, lightsLabel, doorLabel, acLabel, temperatureLabel, lightsSegmentedControl, doorSegmentedControl, acSegmentedControl, temperatureSlider, temperatureValueLabel, alarmButton].forEach {
+        [backgroundImage, welcomeLabel, titleLabel, lightsLabel, doorLabel, acLabel, temperatureLabel, lightsSegmentedControl, doorSegmentedControl, acSegmentedControl, temperatureSlider, temperatureValueLabel, alarmButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
         
         NSLayoutConstraint.activate([
+            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
             welcomeLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             welcomeLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             

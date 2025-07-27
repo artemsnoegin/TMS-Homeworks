@@ -9,6 +9,8 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    let backgroundImage = UIImageView(image: .blueMeshGradient)
+    
     let titleLabel = UILabel()
     let usernameLabel = UILabel()
     let passwordLabel = UILabel()
@@ -25,12 +27,12 @@ class RegisterViewController: UIViewController {
         view.backgroundColor = UIColor(red: 0.3, green: 0.5, blue: 0.7, alpha: 1)
         
         titleLabel.text = "Registration Form"
-        titleLabel.font = .preferredFont(forTextStyle: .largeTitle)
-        titleLabel.textColor = .white
+        titleLabel.font = .preferredFont(forTextStyle: .extraLargeTitle2)
+        titleLabel.textColor = .black
         
         usernameLabel.text = "Username"
         usernameLabel.font = .preferredFont(forTextStyle: .title3)
-        usernameLabel.textColor = .white
+        usernameLabel.textColor = .black
         
         usernameField.backgroundColor = .white
         usernameField.borderStyle = .roundedRect
@@ -38,7 +40,7 @@ class RegisterViewController: UIViewController {
         
         passwordLabel.text = "Password"
         passwordLabel.font = .preferredFont(forTextStyle: .title3)
-        passwordLabel.textColor = .white
+        passwordLabel.textColor = .black
         
         passwordField.backgroundColor = .white
         passwordField.borderStyle = .roundedRect
@@ -46,18 +48,22 @@ class RegisterViewController: UIViewController {
         
         confirmationLabel.text = "Confirm password"
         confirmationLabel.font = .preferredFont(forTextStyle: .title3)
-        confirmationLabel.textColor = .white
-        
+        confirmationLabel.textColor = .black
         confirmationField.backgroundColor = .white
         confirmationField.borderStyle = .roundedRect
         confirmationField.placeholder = "Please confirm password"
         
-        [titleLabel, usernameLabel, passwordLabel, usernameField, passwordField, confirmationLabel, confirmationField, saveButton].forEach {
+        [backgroundImage, titleLabel, usernameLabel, passwordLabel, usernameField, passwordField, confirmationLabel, confirmationField, saveButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
         
         NSLayoutConstraint.activate([
+            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 65),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
