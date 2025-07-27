@@ -16,12 +16,13 @@ class ViewController: UIViewController {
     let usernameField = UITextField()
     let passwordField = UITextField()
     
-    let logInButton = UIButton(configuration: .tinted())
-    let registerButton = UIButton(configuration: .plain())
+    @IBOutlet weak var logInButton: UIButton!
+    //    let logInButton = UIButton(configuration: .tinted())
+    @IBOutlet weak var registerButton: UIButton!
+    //    let registerButton = UIButton(configuration: .plain())
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         view.backgroundColor = UIColor(red: 0.5, green: 0.6, blue: 0.5, alpha: 1)
         
         titleLabel.text = "My Home Control"
@@ -44,12 +45,6 @@ class ViewController: UIViewController {
         passwordField.borderStyle = .roundedRect
         passwordField.placeholder = "Please enter password"
         passwordField.isSecureTextEntry = true
-        
-        logInButton.setTitle("Log In", for: .normal)
-        logInButton.tintColor = .white
-        
-        registerButton.setTitle("Register", for: .normal)
-        registerButton.setTitleColor(.white, for: .normal)
         
         [titleLabel, usernameLabel, passwordLabel, usernameField, passwordField, logInButton, registerButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
