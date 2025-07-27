@@ -50,17 +50,17 @@ class ViewController: UIViewController {
         }
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 75),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 65),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            usernameLabel.bottomAnchor.constraint(equalTo: usernameField.topAnchor),
+            usernameLabel.bottomAnchor.constraint(equalTo: usernameField.topAnchor, constant: -5),
             usernameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             
-            usernameField.bottomAnchor.constraint(equalTo: passwordLabel.topAnchor, constant: -5),
+            usernameField.bottomAnchor.constraint(equalTo: passwordLabel.topAnchor, constant: -10),
             usernameField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             usernameField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             
-            passwordLabel.bottomAnchor.constraint(equalTo: passwordField.topAnchor),
+            passwordLabel.bottomAnchor.constraint(equalTo: passwordField.topAnchor, constant: -5),
             passwordLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             
             passwordField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),
