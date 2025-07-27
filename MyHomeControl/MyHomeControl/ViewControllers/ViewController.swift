@@ -17,9 +17,7 @@ class ViewController: UIViewController {
     let passwordField = UITextField()
     
     @IBOutlet weak var logInButton: UIButton!
-    //    let logInButton = UIButton(configuration: .tinted())
     @IBOutlet weak var registerButton: UIButton!
-    //    let registerButton = UIButton(configuration: .plain())
 
     override func viewDidLoad() {
         super.viewDidLoad()
