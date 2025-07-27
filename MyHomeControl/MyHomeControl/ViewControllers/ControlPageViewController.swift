@@ -20,7 +20,7 @@ class ControlPageViewController: UIViewController {
     let doorSegmentedControl = UISegmentedControl()
     let acSegmentedControl = UISegmentedControl()
     
-    let temperatureSlider = UISlider()
+    @IBOutlet weak var temperatureSlider: UISlider!
     var temperatureValueLabel = UILabel()
     
     let alarmButton = UIButton(configuration: .filled())
@@ -122,5 +122,8 @@ class ControlPageViewController: UIViewController {
             alarmButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             alarmButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
+    }
+    @IBAction func sliderValueChanged(_ sender: Any) {
+        temperatureValueLabel.text = "\(Int(temperatureSlider.value))℃"
     }
 }
